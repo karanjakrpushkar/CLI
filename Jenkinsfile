@@ -26,10 +26,10 @@ node {
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Deploye Code') {
             if (isUnix()) {
-                rc = sh returnStatus: true, script: "${toolbelt}/sfdx\" sfdx force:auth:jwt:grant --clientid 3MVG9LzKxa43zqdJK6JA1ifB15Lp3lwIjs3rwJW1so3K7FZ.xzQLmiC32fC_T85vcNoVhOfV9VcRsMyxw2YaX --jwtkeyfile c:\openssl\bin\server.key --username jenkins.user@macgregor.com.jenkinscli --instanceurl https://test.salesforce.com --setdefaultdevhubusername
+                rc = sh returnStatus: true, script: "${toolbelt}/sfdx\" sfdx force:auth:jwt:grant --clientid 3MVG9LzKxa43zqdJK6JA1ifB15Lp3lwIjs3rwJW1so3K7FZ.xzQLmiC32fC_T85vcNoVhOfV9VcRsMyxw2YaX --jwtkeyfile server.key --username jenkins.user@macgregor.com.jenkinscli --instanceurl https://test.salesforce.com --setdefaultdevhubusername
 
             }else{
-                 rc = bat returnStatus: true, script: "\"${toolbelt}\" sfdx force:auth:jwt:grant --clientid 3MVG9LzKxa43zqdJK6JA1ifB15Lp3lwIjs3rwJW1so3K7FZ.xzQLmiC32fC_T85vcNoVhOfV9VcRsMyxw2YaX --jwtkeyfile c:\openssl\bin\server.key --username jenkins.user@macgregor.com.jenkinscli --instanceurl https://test.salesforce.com --setdefaultdevhubusername
+                 rc = bat returnStatus: true, script: "\"${toolbelt}\" sfdx force:auth:jwt:grant --clientid 3MVG9LzKxa43zqdJK6JA1ifB15Lp3lwIjs3rwJW1so3K7FZ.xzQLmiC32fC_T85vcNoVhOfV9VcRsMyxw2YaX --jwtkeyfile server.key --username jenkins.user@macgregor.com.jenkinscli --instanceurl https://test.salesforce.com --setdefaultdevhubusername
 
             }
             if (rc != 0) { error 'hub org authorization failed' }
