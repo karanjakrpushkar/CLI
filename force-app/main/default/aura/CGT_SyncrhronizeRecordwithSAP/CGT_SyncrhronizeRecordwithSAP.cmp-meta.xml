@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>41.0</apiVersion>
+    <description>Attention! used in the object-specific lightning quick action to resend the integration message to SAP. This is being used in all the FSM transaction data flows.</description>
+</AuraDefinitionBundle>

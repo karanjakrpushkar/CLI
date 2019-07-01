@@ -1,0 +1,26 @@
+<aura:component controller="CGT_DeleteQuoteController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="visible" type="Boolean" default="false"/>
+    <aura:attribute name="message" description="Message content, can be HTML" type="String"/>
+    <aura:attribute name="type" description="Message type, can be error/warning/info/success" type="String" default="info"/>
+    <div class="slds-page-header__name-title">
+              <h1>
+                <span class="slds-page-header__title slds-truncate slds-border_bottom slds-align_absolute-center" title="Delete Quote">Delete Quote</span>
+              </h1>
+            </div>
+    <div class="{!'slds-box slds-theme–alert-texture slds-theme–' + v.type}">
+        <!--<lightning:icon iconName="{! 'utility:'+ v.type }" size="medium" alternativeText="{!v.type}" Class="iconContainer"/>&nbsp;-->
+      <aura:unescapedHtml value="{!v.message}"/>
+
+    </div>
+    <aura:if isTrue="{!v.visible}">
+    <div class="Delete Record">
+        <!--<lightning:card iconName="action:delete" title="Delete Quote"> -->
+        <lightning:card class="slds-float_right" >
+
+                <lightning:button class="slds-col_bump-right" label="Cancel" variant="neutral" onclick="{!c.cancel}"/>
+                <lightning:button class="slds-col_bump-right " label="Delete" variant="destructive" onclick="{!c.handleDeleteRecord}"/> 
+        </lightning:card>
+    </div>
+    </aura:if>
+</aura:component>

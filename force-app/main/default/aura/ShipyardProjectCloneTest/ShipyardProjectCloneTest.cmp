@@ -1,0 +1,11 @@
+<aura:component controller="CGT_ShipyardCloneController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+	  <!--  <lightning:button variant="base" label="Base" title="Base action" onclick="{! c.myAction }"/> -->
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" /> 
+    <div class="demo-only" style="height: 6rem;">
+      <div role="status" class="slds-spinner slds-spinner_brand slds-spinner_medium">
+        <span class="slds-assistive-text">Loading</span>
+               <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+                </div>
+</aura:component>

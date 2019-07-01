@@ -1,0 +1,5 @@
+<aura:component controller="CGT_ResetIntegrationController" 
+	implements="force:lightningQuickAction,force:hasRecordId" description="This component invokes via object specific quick action.">
+	<!-- Handle component initialization in a client-side controller -->
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" description="Initialization process on component load" />
+</aura:component>
